@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://c3fu1y5cn5jp2"]
+
+[ext_resource type="Texture2D" uid="uid://beek2h4ano8lo" path="res://icon.svg" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://qakj5p2hugr3" path="res://character_body_2d.gd" id="2_1bvp3"]
+
+[sub_resource type="GDScript" id="GDScript_0xm2m"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7dm0k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
+size = Vector2(147, 146)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rc0s5"]
+size = Vector2(1158, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7wg42"]
+size = Vector2(39, 693)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pkqqd"]
+size = Vector2(49, 702)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_613eh"]
+size = Vector2(1247, 54)
+
+[node name="Main" type="Node2D" unique_id=1003705794]
+script = SubResource("GDScript_0xm2m")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=661691451]
+position = Vector2(1, 1)
+scale = Vector2(1.8067293, 1.7833333)
+texture = SubResource("CompressedTexture2D_7dm0k")
+
+[node name="Camera" type="Camera2D" parent="Sprite2D" unique_id=1118968004]
+
+[node name="Label" type="Label" parent="." unique_id=1647000531]
+offset_left = -356.0
+offset_top = -244.0
+offset_right = -13.0
+offset_bottom = -18.0
+theme_override_colors/font_color = Color(0.23921569, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 10.04853, 0.99607843)
+theme_override_font_sizes/font_size = 90
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=2129102099]
+position = Vector2(2, 2)
+script = ExtResource("2_1bvp3")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=45692688]
+position = Vector2(20.62501, -116)
+scale = Vector2(1.1503907, 1.0937498)
+texture = ExtResource("1_ig7tw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=637580216]
+position = Vector2(20.5, -116)
+scale = Vector2(1, 0.99999994)
+shape = SubResource("RectangleShape2D_0xm2m")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="." unique_id=147453281]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2" unique_id=460444068]
+position = Vector2(1, 324)
+shape = SubResource("RectangleShape2D_rc0s5")
+debug_color = Color(0.11372549, 0.25490198, 0.09019608, 0.41960785)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D2" unique_id=1578554774]
+position = Vector2(598, 17)
+shape = SubResource("RectangleShape2D_7wg42")
+debug_color = Color(0.11372549, 0.25490198, 0.09019608, 0.41960785)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="CharacterBody2D2" unique_id=1237815196]
+position = Vector2(-601, 24)
+shape = SubResource("RectangleShape2D_pkqqd")
+debug_color = Color(0.11372549, 0.25490198, 0.09019608, 0.41960785)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="CharacterBody2D2" unique_id=1983648274]
+position = Vector2(6, -344)
+shape = SubResource("RectangleShape2D_613eh")
+debug_color = Color(0.11372549, 0.25490198, 0.09019608, 0.41960785)
+
+[node name="ColorRect" type="ColorRect" parent="CharacterBody2D2" unique_id=1278864084]
+offset_left = -579.0
+offset_top = 301.0
+offset_right = 576.0
+offset_bottom = 370.0
+color = Color(0.24515918, 0.5768331, 0.49302602, 1)
