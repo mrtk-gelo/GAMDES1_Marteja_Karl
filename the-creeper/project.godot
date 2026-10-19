@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="The Creeper"
-run/main_scene="uid://bhve7tkwh2nqv"
+run/main_scene="uid://4b5k1tsmx412"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
