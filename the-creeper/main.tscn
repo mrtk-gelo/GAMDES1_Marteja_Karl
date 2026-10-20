@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b3wguecvjxmw7" path="res://hud.tscn" id="4_1bvp3"]
 [ext_resource type="AudioStream" uid="uid://nve61pk4uu7i" path="res://dodge_the_creeps_2d_assets/art/House In a Forest Loop.ogg" id="5_7mycd"]
 [ext_resource type="AudioStream" uid="uid://bw8hu6u2vpojc" path="res://dodge_the_creeps_2d_assets/art/gameover.wav" id="6_272bh"]
+[ext_resource type="Texture2D" uid="uid://cjdmyo7djsdsy" path="res://dodge_the_creeps_2d_assets/art/bg.png" id="7_272bh"]
 
 [sub_resource type="Curve2D" id="Curve2D_0xm2m"]
 _data = {
@@ -43,6 +44,12 @@ stream = ExtResource("5_7mycd")
 
 [node name="DeathSound" type="AudioStreamPlayer2D" parent="." unique_id=1365363542]
 stream = ExtResource("6_272bh")
+
+[node name="Bg" type="Sprite2D" parent="." unique_id=1612666715]
+z_index = -1
+position = Vector2(239.50003, 361.00003)
+scale = Vector2(0.67361116, 0.56406254)
+texture = ExtResource("7_272bh")
 
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
