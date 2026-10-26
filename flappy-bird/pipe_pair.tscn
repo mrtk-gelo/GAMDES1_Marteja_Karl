@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://bknfwfk8iua0a"]
+
+[ext_resource type="Script" uid="uid://cpjbqar2ygean" path="res://pipe_pair.gd" id="1_bec1m"]
+[ext_resource type="Texture2D" uid="uid://um3e30gw7jy3" path="res://assets/PNG/rockDown.png" id="2_nuf67"]
+[ext_resource type="Texture2D" uid="uid://c4psg4mlwvgyj" path="res://assets/PNG/rock.png" id="3_yegdb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cnjwc"]
+size = Vector2(104, 237)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qef7r"]
+size = Vector2(107, 236)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e00g0"]
+size = Vector2(10, 180)
+
+[node name="PipePair" type="Node2D" unique_id=1767439320]
+script = ExtResource("1_bec1m")
+
+[node name="TopPipe" type="Area2D" parent="." unique_id=1639270667]
+position = Vector2(0, -210)
+
+[node name="Sprite2D" type="Sprite2D" parent="TopPipe" unique_id=1119016980]
+texture = ExtResource("2_nuf67")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopPipe" unique_id=1906955576]
+position = Vector2(1, -1.5)
+shape = SubResource("RectangleShape2D_cnjwc")
+
+[node name="BottomPipe" type="Area2D" parent="." unique_id=1323221846]
+position = Vector2(0, 210)
+
+[node name="Sprite2D" type="Sprite2D" parent="BottomPipe" unique_id=184793172]
+texture = ExtResource("3_yegdb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomPipe" unique_id=1077827478]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_qef7r")
+
+[node name="ScoreZone" type="Area2D" parent="." unique_id=941358501]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreZone" unique_id=1770960924]
+shape = SubResource("RectangleShape2D_e00g0")
+
+[connection signal="body_entered" from="TopPipe" to="." method="_on_top_pipe_body_entered"]
+[connection signal="body_entered" from="BottomPipe" to="." method="_on_bottom_pipe_body_entered"]
+[connection signal="body_entered" from="ScoreZone" to="." method="_on_score_zone_body_entered"]
