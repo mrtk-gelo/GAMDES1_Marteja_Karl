@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://l8qbqbdv6xx2"]
+
+[ext_resource type="Script" uid="uid://bbnrmwg8w6ni0" path="res://hud.gd" id="1_37p78"]
+
+[node name="HUD" type="CanvasLayer" unique_id=1230287148]
+script = ExtResource("1_37p78")
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=1851684595]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 1
+
+[node name="GameOverLabel" type="Label" parent="." unique_id=1046838880]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Game Over - press Space"
+horizontal_alignment = 1
+vertical_alignment = 1
