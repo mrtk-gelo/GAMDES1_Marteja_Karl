@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dvc68n1cuoh1w" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://0p2sa5l3kvwq" path="res://player.tscn" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://l8qbqbdv6xx2" path="res://hud.tscn" id="4_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://cy7boa4s0jcrs" path="res://assets/PNG/background.png" id="4_lquwl"]
 
 [node name="Main" type="Node2D" unique_id=1879698042]
 script = ExtResource("1_0xm2m")
@@ -14,5 +15,11 @@ wait_time = 1.7999999999999998
 autostart = true
 
 [node name="HUD" parent="." unique_id=1230287148 instance=ExtResource("4_1bvp3")]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1587984020]
+z_index = -1
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_lquwl")
+centered = false
 
 [connection signal="timeout" from="PipeTimer" to="." method="_on_pipe_timer_timeout"]
